@@ -1,12 +1,5 @@
-  import MainPage from "@/pages/Main/ui/MainPage";
-import Layout from "@/widgets/Layout";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <Layout type="login">
-      <main>
-        <MainPage />
-      </main>
-    </Layout>
-  );
+export default function RootPage() {
+  redirect('/ru');
 }
