@@ -1,4 +1,4 @@
-import MainPage from "@/pages/Main/ui/MainPage";
+  import MainPage from "@/pages/Main/ui/MainPage";
 import Layout from "@/widgets/Layout";
 
 export default function Home() {

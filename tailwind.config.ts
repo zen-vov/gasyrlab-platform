@@ -6,6 +6,11 @@ const config: Config = {
     "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
+    screens: {
+      xl: "1440px",
+      lg: "1080px",
+      md: { max: "768px" },
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
