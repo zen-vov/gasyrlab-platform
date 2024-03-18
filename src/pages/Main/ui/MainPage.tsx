@@ -5,8 +5,9 @@ export default function MainPage() {
   const t = useTranslations("Hello");
 
   return (
-    <div>
+    <section>
       <h1>{t("title")}</h1>
-    </div>
+      <h2>{t("piska")}</h2>
+    </section>
   );
 }
