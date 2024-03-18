@@ -8,7 +8,7 @@ export const localePrefix = 'always';
 
 export const pathnames = {
   '/': '/',
-  '/blog': '/blog',
+  '/home': '/home',
 
   '/about': {
     ru: '/about',

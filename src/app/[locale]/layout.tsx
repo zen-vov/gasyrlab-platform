@@ -14,7 +14,7 @@ interface RootLayoutProps {
   children: React.ReactNode;
   params: {
     locale: string;
-  }
+  },
 }
 export default function RootLayout({
   children,
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           {children}
-        </Providers>
+        </Providers>        
       </body>
     </html>
   );

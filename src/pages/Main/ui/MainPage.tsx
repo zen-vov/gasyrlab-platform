@@ -1,3 +1,12 @@
+import React from "react";
+import { useTranslations } from "next-intl";
+
 export default function MainPage() {
-  return <div>main page</div>;
+  const t = useTranslations("Hello");
+
+  return (
+    <div>
+      <h1>{t("title")}</h1>
+    </div>
+  );
 }
