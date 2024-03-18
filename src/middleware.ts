@@ -1,13 +1,13 @@
-import createMiddleware from 'next-intl/middleware';
-import { locales, localePrefix, pathnames } from './navigation';
+import createMiddleware from "next-intl/middleware";
+import { locales, localePrefix, pathnames } from "./navigation";
 
 export default createMiddleware({
-  defaultLocale: 'ru',
+  defaultLocale: "ru",
   localePrefix,
   locales,
-  pathnames
+  pathnames,
 });
 
 export const config = {
-  matcher: ['/', '/(ru|kz)/:path*']
+  matcher: ["/", "/(ru|kz)/:path*"],
 };
