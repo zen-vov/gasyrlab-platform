@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-import Header from "./Header/ui/Header";
-import Footer from "./Footer/ui/Footer";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export default function Layout({ children, type }: LayoutProps) {
   return (
-    <article className="container">
+    <article className="">
       {type == "login" && (
         <>
           <Header />
