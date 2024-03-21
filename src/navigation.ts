@@ -13,6 +13,14 @@ export const pathnames = {
   '/about': {
     ru: '/about',
     kz: '/about',
+  },
+  "/signup": {
+    ru: '/singup',
+    kz: '/signup',
+  },
+  "/auth": {
+    ru: '/auth',
+    kz: '/auth'
   }
 } satisfies Pathnames<typeof locales>
 

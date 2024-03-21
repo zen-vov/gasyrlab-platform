@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 import Providers from "../provider/provider";
 import '../styles/globals.css';
 
@@ -20,12 +21,15 @@ export default function RootLayout({
   children,
   params: { locale },
 }: Readonly<RootLayoutProps>) {
+  const messages = useMessages();
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <Providers>
-          {children}
-        </Providers>        
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Providers>
+            {children}
+          </Providers>        
+        </NextIntlClientProvider>
       </body>
     </html>
   );
