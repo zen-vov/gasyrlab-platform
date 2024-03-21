@@ -1,22 +1,33 @@
 'use client'
 
-import { useEffect, useState } from "react"
+import { memo, useEffect, useState } from "react"
 
-const LoadingAnimations = () => {
-  const [framer] = useState(['\\', '|', '/', '-']);
-  const [currentFrameIndex, setCurrentFrameIndex] = useState(0);
+interface Props {
+  duration?: number
+}
+
+const LoadingAnimations = ({ duration = 5000 }: Props) => {
+  const [progress, setProgress] = useState<number>(0);
 
   useEffect(() => {
+    let currentProgress = 0;
+
     const interval = setInterval(() => {
-      setCurrentFrameIndex((prevIndex) => (prevIndex + 1) % framer.length);
-    }, 250)
+      currentProgress += 10; 
+      setProgress(Math.min(currentProgress, 100)); 
+    }, duration / 10); 
 
-    return () => clearInterval(interval)
-  }, [framer])
+    setTimeout(() => {
+      clearInterval(interval);
+    }, duration);
 
-  return (
-    <span className="text-green-700">{framer[currentFrameIndex]}</span>
-  )
-}
+    return () => clearInterval(interval);
+  }, [duration]);
+
+  const filledPart = Array.from({ length: progress / 10 }, () => '\u2588').join('');
+  const emptyPart = Array.from({ length: (100 - progress) / 10 }, () => '\u2591').join('');
+
+  return <span className="flex items-center justify-center"><span className="text-[22px]">[</span>{filledPart}{emptyPart}<span className="text-[22px]">]</span></span>;
+};
 
 export default LoadingAnimations

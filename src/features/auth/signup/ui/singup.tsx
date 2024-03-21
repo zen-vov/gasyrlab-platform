@@ -26,47 +26,57 @@ const SingUpForm = () => {
     const isNotEmpty = Object.values(userData).every((val) => val);
 
     if(!isNotEmpty) return;
-    dispatch(createUser(userData));
+    // dispatch(createUser(userData));
   } 
 
-  dispatch(createUser(values));
+  // dispatch(createUser(values));
 
   return (
-    <form action="">
-      <div className="border-lime-900 border-[1px] mb-5">
+    <form action="" className="py-5">
+      <h1 className="mb-5">Registration</h1>
+      <div className="py-3 px-1.5 border-lime-900 border-[1px] mb-5">
         <Input
           name="name"
+          className="w-[90%]"
+          placeholder="First Name"
           value={values.name}
           onChange={handleChange}
         />
       </div>
-      <div className="border-lime-900 border-[1px] mb-5">
+      <div className="py-3 px-1.5 border-lime-900 border-[1px] mb-5">
+        <Input
+          placeholder="Last Name"
+          name="avatar"
+          value={values.avatar}
+          className="w-[90%]"
+          onChange={handleChange}
+        />
+      </div>
+      <div className="py-3 px-1.5 border-lime-900 border-[1px] mb-5">
         <Input 
           name="email"
           value={values.email}
+          placeholder="Email"
+          className="w-[90%]"
           onChange={handleChange}
         />
       </div>
-      <div className="border-lime-900 border-[1px] mb-5">
+      <div className="py-3 px-1.5 border-lime-900 border-[1px] mb-5">
         <Input
           name="password"
           value={values.password}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="border-lime-900 border-[1px] mb-5">
-        <Input
-          name="avatar"
-          value={values.avatar}
+          placeholder="Password"
+          className="w-[90%]"
           onChange={handleChange}
         />
       </div>
       <MButton 
         label="Войти"
+        className="mr-5"
         onClick={handleSubmit}
       />
       <Link href={'/auth'} >
-        Have an account
+        Have an account?
       </Link>
     </form>
   )

@@ -1,5 +1,5 @@
 import { loginUser } from "@/features/auth/login/model/login";
-// import { createUser } from "@/features/auth/signup/model/singup";
+import { createUser } from "@/features/auth/signup/model/singup";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface User {
